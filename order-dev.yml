@@ -5,3 +5,8 @@ spring:
     password: 158262751
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
+  rabbitmq:
+    host: http://47.105.215.58
+    port: 5672
+    username: admin
+    password: admin
