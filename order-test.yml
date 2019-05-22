@@ -1,0 +1,26 @@
+eureka:
+  client:
+    # 注册服务中心
+    service-url:
+      defaultZone: http://47.105.218.58:8763/eureka/,http://47.105.218.58:8761/eureka/,http://47.105.218.58:8762/eureka/
+
+PRODUCT:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+spring:
+  application:
+    name: order
+  #  profiles:
+  #    active: hikari
+  datasource:
+    url: jdbc:mysql://47.105.218.58/mooc?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 158262751
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  port: 8082
+logging:
+  level:
+    com.cloud.product.mapper: debug
