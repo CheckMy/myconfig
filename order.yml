@@ -1,4 +1,4 @@
-env: "config-server test !"
+env: "config-server test1 !"
 # 这里的 order 文件想当与 application.yml
 server:
   port: 8081
