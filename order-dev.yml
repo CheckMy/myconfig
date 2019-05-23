@@ -23,14 +23,14 @@ spring:
         # input 绑定通道 与接口中的通道相对应 解决多实例应用请求一个URL 造成所有的实例接收消息
         input:
           # 绑定交换器
-          destination: rabbit-test
-          content-type: application/json
+#          destination: rabbit-test
+#          content-type: application/json
           #分组:多实例下 不同的分组 相当于同一个应用的不同实例 通道 对应不同的队列
           group: myorder
         #绑定输出通道名·
         output:
-          destination: rabbit-test
-          conteny-type: aaplication/json
+#          destination: rabbit-test
+#          conteny-type: aaplication/json
           group: myorder
     # stream 配置
 #    stream:
