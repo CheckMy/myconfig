@@ -13,11 +13,11 @@ spring:
   #    publisher-confirms: true
   #    virtual-host: /
   #开启消息跟踪
-#  cloud:
-#    bus:
-#      refresh:
-#        enabled: true
-   cloud:
+  #  cloud:
+  #    bus:
+  #      refresh:
+  #        enabled: true
+  cloud:
     stream:
       bindings:
         # input 绑定通道 与接口中的通道相对应 解决多实例应用请求一个URL 造成所有的实例接收消息
@@ -32,7 +32,7 @@ spring:
           destination: rabbit-test
           conteny-type: aaplication/json
           group: myorder
-  # stream 配置
+    # stream 配置
 #    stream:
 #      binders:         # 在此处配置要绑定的rabbitmq的服务信息；
 #        defaultRabbit: # 表示定义的名称，用于于binding整合
