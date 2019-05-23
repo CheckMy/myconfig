@@ -24,13 +24,13 @@ spring:
         input:
           # 绑定交换器
 #          destination: rabbit-test
-#          content-type: application/json
+          content-type: application/json
           #分组:多实例下 不同的分组 相当于同一个应用的不同实例 通道 对应不同的队列
           group: myorder
         #绑定输出通道名·
         output:
 #          destination: rabbit-test
-#          conteny-type: aaplication/json
+          conteny-type: aaplication/json
           group: myorder
     # stream 配置
 #    stream:
