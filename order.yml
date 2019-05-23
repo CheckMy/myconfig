@@ -4,8 +4,6 @@ girl:
   name: Mike
   age: 11
 # 这里的 order 文件想当与 application.yml
-server:
-  port: 8081
 
 PRODUCT:
   ribbon:
