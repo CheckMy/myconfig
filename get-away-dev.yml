@@ -1,5 +1,6 @@
 # http://localhost:9000/product/product/list
 zuul:
+  sensitive-headers: #全部忽略敏感头（忽略Cookie）
   routes:
     # 配置户访问方式 http://localhost:9000/my/product/list
     # 查看所有路由规则 http://localhost:9000/actuator/routes
@@ -8,10 +9,6 @@ zuul:
       serviceId: PRODUCT
       # 设置敏感信息为空，默认情况下 "Cookie", "Set-Cookie", "Authorization" 会过滤以上字段
       # 因此 cookies 是不会传到后面的服务，设置为空就行
-      sensitiveHeaders:
-    login:
-      path: /login/**
-      serviceId: user
       sensitiveHeaders:
     # 简洁写法,就是 product 服务可以，通过 /test/ 访问
     product: /test/**
