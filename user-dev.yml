@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    url: jdbc:mysql://47.105.218.58/mooc?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 158262751
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  rabbitmq:
+    host: 47.105.218.58
+    port: 5672
+    username: guest
+    password: guest
+  redis:
+    host: 47.105.218.58
+    port: 6379
+logging:
+  level:
+    com.cloud.user.mapper: debug
