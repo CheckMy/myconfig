@@ -2,6 +2,6 @@ env: "config-server test3 !"
 # 前缀配置
 girl:
   name: Mike
-  age: 11
+  age: 112
 # 这里的 order 文件想当与 application.yml
 
