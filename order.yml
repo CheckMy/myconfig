@@ -2,7 +2,7 @@ env: "config-server test3 !"
 # 前缀配置
 girl:
   name: Mike
-  age: 15
+  age: 20
 # 这里的 order 文件想当与 application.yml
 server:
   port: 8081
