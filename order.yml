@@ -5,10 +5,3 @@ girl:
   age: 11
 # 这里的 order 文件想当与 application.yml
 
-PRODUCT:
-  ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
-
-logging:
-  level:
-    com.cloud.product.mapper: debug

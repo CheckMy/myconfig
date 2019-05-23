@@ -12,3 +12,49 @@ spring:
     password: guest
 #    publisher-confirms: true
 #    virtual-host: /
+  #开启消息跟踪
+  cloud:
+    bus:
+      refresh:
+        enabled: true
+  stream:
+    bindings:
+      # input 绑定通道 与接口中的通道相对应 解决多实例应用请求一个URL 造成所有的实例接收消息
+      input:
+        # 绑定交换器
+        destination: rabbit-test
+        content-type: application/json
+        #分组:多实例下 不同的分组 相当于同一个应用的不同实例 通道 对应不同的队列
+        group: myorder1
+      #绑定输出通道名·
+      output:
+        destination: rabbit-test
+        conteny-type: aaplication/json
+        group: myorder1
+# stream 配置
+#    stream:
+#      binders:         # 在此处配置要绑定的rabbitmq的服务信息；
+#        defaultRabbit: # 表示定义的名称，用于于binding整合
+#          type: rabbit # 消息组件类型
+#          environment: # 设置rabbitmq的相关的环境配置
+#            spring:
+#              rabbitmq:
+#              addresses: 47.105.218.58
+#              username: guest
+#              password: guest
+##              virtual-host: /
+#      bindings:                           # 服务的整合处理
+#        output:                           # 这个名字是一个通道的名称，在分析具体源代码的时候会进行说明
+#          destination: streamExchange     # 表示要使用的Exchange名称定义
+#          content-type: application/json  # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
+#          binder: defaultRabbit           # 设置要绑定的消息服务的具体设置
+#        input:                            # 这个名字是一个通道的名称，在分析具体源代码的时候会进行说明
+#          destination: streamExchange     # 表示要使用的Exchange名称定义
+#          content-type: application/json  # 设置消息类型，本次为对象json，如果是文本则设置“text/plain”
+#          binder: defaultRabbit           # 设置要绑定的消息服务的具体设置
+logging:
+  level:
+    com.cloud.product.mapper: debug
+PRODUCT:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
