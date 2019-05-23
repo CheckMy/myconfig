@@ -9,11 +9,11 @@ zuul:
       # 设置敏感信息为空，默认情况下 "Cookie", "Set-Cookie", "Authorization" 会过滤以上字段
       # 因此 cookies 是不会传到后面的服务，设置为空就行
       sensitiveHeaders:
-    # 简洁写法,就是 product 服务可以，通过 /route/ 访问
-    product: /route/**
+    # 简洁写法,就是 product 服务可以，通过 /test/ 访问
+    product: /test/**
   # - 代表 set 集合,满足此规则下的路径无法被路由
   # http://localhost:8080/product/zuul        正常访问
-  # http://localhost:9000/route/product/zuul  无法访问
+  # http://localhost:9000/test/product/zuul  无法访问
   ignored-patterns:
     - /**/product/zuul
 management:
