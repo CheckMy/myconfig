@@ -17,7 +17,7 @@ zuul:
   # http://localhost:9000/test/product/zuul  无法访问
   ignored-patterns:
     - /**/product/zuul
-
+    -
 management:
   endpoints:
     web:
@@ -30,6 +30,7 @@ ribbon:
   ConnectTimeout: 23000 #ribbon请求连接的超时时间，默认值2000
   MaxAutoRetries: 0     #对当前实例的重试次数，默认0
   MaxAutoRetriesNextServer: 1 #对切换实例的重试次数，默认1
+
 spring:
   rabbitmq:
     host: 47.105.218.58
@@ -39,13 +40,14 @@ spring:
   redis:
     host: 47.105.218.58
     port: 6379
-  zipkin:
-    base-url: http://47.105.218.58:9411/
-    sender:
-      type: web # 坑的东西
-  sleuth:
-    sampler:
-      probability: 1 # 默认只暴露 0.1 的数据请求,开发设置为1
-    http:
-      legacy:
-        enabled: true
+  cloud:
+    zipkin:
+      base-url: http://47.105.218.58:9411/
+      sender:
+        type: web # 坑的东西
+    sleuth:
+      sampler:
+        probability: 1 # 默认只暴露 0.1 的数据请求,开发设置为1
+      http:
+        legacy:
+          enabled: true
